@@ -14,7 +14,12 @@
 		padding:15px;
 	}
 </style>
+
 <center>
+<br><br><br>
+<h3><caption>= = {{question.title_text}} = =</caption></h3>
+    
+
 <h1>{{ question.question_text }}</h1>
 <!-- 
 <ul>
@@ -22,8 +27,7 @@
     <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }} - - {{choice.notes}}</li>
 {% endfor %}
 </ul> -->
-<caption>= = Generatrional Divides = =</caption>	
-    <br><br><br>
+
 <table class="demo">
     <thead>
 	<tr>
@@ -44,6 +48,7 @@
 
 </table>
 <br>
-<center>
 <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+<br>
+<a href="/">Home</a>
 </center>

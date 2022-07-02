@@ -1,5 +1,8 @@
 <form action="{% url 'polls:vote' question.id %}" method="post">
 {% csrf_token %}
+    <br>
+        <center><h2><caption>= = {{question.title_text}} = =</caption></h2></center>
+    <br>
 <fieldset>
     <legend><h1>{{ question.question_text }}</h1></legend>
     {% if error_message %}<p style="color:red;"><strong>{{ error_message }}</strong></p>{% endif %}
