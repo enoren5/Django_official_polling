@@ -1,9 +1,49 @@
+<style>
+	.demo {
+		border:1px solid gray;
+		border-collapse:collapse;
+		padding:5px;
+	}
+	.demo th {
+		border:1px solid gray;
+		padding:5px;
+		background:#F0F0F0;
+	}
+	.demo td {
+		border:1px solid gray;
+		padding:15px;
+	}
+</style>
+<center>
 <h1>{{ question.question_text }}</h1>
-
+<!-- 
 <ul>
 {% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }} - - {{choice.notes}}</li>
 {% endfor %}
-</ul>
+</ul> -->
+<caption>= = Generatrional Divides = =</caption>	
+    <br><br><br>
+<table class="demo">
+    <thead>
+	<tr>
+		<th>Category</th>
+		<th>Count</th>
+		<th>Notes</th>		
+	</tr>
+	</thead>
+	<tbody>
+    {% for choice in question.choice_set.all %}
+	<tr>
+		<td>{{ choice.choice_text }}</td>
+		<td>{{ choice.votes }} vote{{ choice.votes|pluralize }} </td>
+		<td>{{ choice.notes }}</td>
+	</tr>
+    {% endfor %}
+	</tbody>
 
+</table>
+<br>
+<center>
 <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+</center>
